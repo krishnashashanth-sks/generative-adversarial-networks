@@ -8,17 +8,9 @@ import numpy as np
 # Local imports from your separated files
 from generator import Generator
 from discriminator import Discriminator
-from utils import weights_init
-from dataset import get_mnist_loaders  # Updated to use the loader function
+from utils import weights_init,show_images
+from dataset import train_loader  # Updated to use the loader function
 from train import train                # Added missing train function import
-
-def show_images(img_grid):
-    """Helper function to display a PyTorch image grid using Matplotlib."""
-    np_img = img_grid.numpy()
-    plt.figure(figsize=(8, 8))
-    plt.imshow(np.transpose(np_img, (1, 2, 0)))
-    plt.axis('off')
-    plt.show()
 
 def main():
     # Set runtime device
@@ -33,9 +25,6 @@ def main():
     # Create required local folders
     os.makedirs("../data", exist_ok=True)
     os.makedirs("../outputs", exist_ok=True)
-
-    # Fetch data loaders from dataset.py
-    train_loader, test_loader = get_mnist_loaders(batch_size=batch_size, data_dir="../data")
 
     # Initialize models (Corrected Generator parameter mapping: nz, ngf, nc)
     netG = Generator(nz=100, ngf=64, nc=1)
