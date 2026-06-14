@@ -10,6 +10,9 @@ Generative Adversarial Networks are a powerful class of machine learning framewo
 ## 🤖 GAN Architectures Included
 
 * **[DCGAN (Deep Convolutional GAN)](./dcgan/):** A powerful architectural evolution utilizing spatial convolutional strides (`nn.ConvTranspose2d` and `nn.Conv2d`), batch normalization layers, and LeakyReLU activations to drastically stabilize structural image synthesis on the MNIST dataset.
-* **cGAN (Conditional GAN):** *[Coming Soon]* Directing and controlling the exact class of the image generation process using labels or conditional vectors.
+* VQGAN
+* StyleGAN-V
+* Discovery-GAN
+
 
 ---
