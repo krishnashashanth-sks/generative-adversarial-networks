@@ -42,7 +42,7 @@ The project is organized into several modular Python files to enhance readabilit
 1.  **Clone the repository** (if applicable):
     ```bash
     git clone https://github.com/krishnashashanth-sks/generative-adversarial-networks
-    cd vqgan-pytorch
+    cd generative-adversarial-networks/vqgan
     ```
 
 2.  **Create a virtual environment** (recommended):
