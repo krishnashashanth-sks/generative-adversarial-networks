@@ -41,7 +41,7 @@ The project is organized into several modular Python files to enhance readabilit
 
 1.  **Clone the repository** (if applicable):
     ```bash
-    git clone https://github.com/krishnashashanth-sks/vqgan-pytorch.git
+    git clone https://github.com/krishnashashanth-sks/generative-adversarial-networks
     cd vqgan-pytorch
     ```
 
