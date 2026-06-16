@@ -18,6 +18,10 @@ Generative Adversarial Networks are a powerful class of machine learning framewo
 
 * **[AnimeGAN](./anime-gan/):** A specialized architecture designed for artistic style transfer, transforming real-world images into anime-style artwork while preserving content structure and key features.
 
+* **[InfoGAN (Information Maximizing GAN)](./info-gan/):** An interpretable GAN variant that learns disentangled representations by discovering latent code factors without paired supervision, enabling meaningful control over specific attributes in generated images.
+
+* **[Pix2Pix GAN](./pix2pix-gan/):** A conditional GAN framework for paired image-to-image translation tasks, learning to map images from one domain to another using paired training data and pixel-level loss guidance.
+
 
 
 ---
