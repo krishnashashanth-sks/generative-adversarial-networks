@@ -3,7 +3,6 @@ import torch.nn as nn
 import torch
 import torch.nn.functional as F
 
-# --- Corrected SelfAttention (adjusted reduced_channels calculation) ---
 class SelfAttention(nn.Module):
   def __init__(self, in_channels):
     super(SelfAttention, self).__init__()
@@ -28,7 +27,6 @@ class SelfAttention(nn.Module):
     out = self.gamma * out + x
     return out
 
-# --- ConditionalBatchNorm2d (no change needed from previous correct version) ---
 class ConditionalBatchNorm2d(nn.Module):
   def __init__(self, num_features, embedding_dim):
     super(ConditionalBatchNorm2d, self).__init__()
@@ -43,7 +41,6 @@ class ConditionalBatchNorm2d(nn.Module):
     beta = self.beta_embed(c).view(c.size(0), self.num_features, 1, 1)
     return out * (1 + gamma) + beta
 
-# --- Corrected GenBlock (fixed residual connection logic and input `latent_dim_per_split`) ---
 class GenBlock(nn.Module):
   def __init__(self, in_channels, out_channels, latent_dim_per_split, attention=False, upsample=True):
     super(GenBlock, self).__init__()
@@ -89,19 +86,16 @@ class GenBlock(nn.Module):
     return out
 
 
-# --- SNConv2d (no change needed from previous correct version) ---
 class SNConv2d(nn.Conv2d):
   def __init__(self, *args, **kwargs):
     super().__init__(*args, **kwargs)
     spectral_norm(self)
 
-# --- SNLinear (no change needed from previous correct version) ---
 class SNLinear(nn.Linear):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         spectral_norm(self)
 
-# --- Corrected DisBlock (fixed residual connection logic and use of SNConv2d) ---
 class DisBlock(nn.Module):
   def __init__(self, in_channels, out_channels, downsample=True, attention=False):
     super(DisBlock, self).__init__()

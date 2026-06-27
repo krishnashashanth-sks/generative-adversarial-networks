@@ -2,6 +2,7 @@ import torch.nn as nn
 from layers import GenBlock
 import torch
 import torch.nn.functional as F
+
 class BigGANGenerator(nn.Module):
   def __init__(self, latent_dim, num_classes, ch=64, img_size=128, attention_res=[64, 32]):
     super(BigGANGenerator, self).__init__()

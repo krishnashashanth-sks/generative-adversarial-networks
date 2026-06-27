@@ -8,6 +8,7 @@ import tensorflow as tf
 # Also, add a channel dimension if not present (for grayscale images)
 x_train = x_train.reshape(x_train.shape[0], 28, 28, 1).astype('float32')
 
+# Resize MNIST images from 28x28 to 32x32 to match the discriminator's input shape
 x_train = tf.image.resize(x_train, (32, 32)).numpy()
 
 # Normalize pixel values to [-1, 1]

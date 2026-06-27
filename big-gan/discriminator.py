@@ -4,7 +4,6 @@ from layers import SNConv2d,DisBlock,SNLinear
 import torch.nn.functional as F
 import torch
 
-# --- Corrected BigGANDiscriminator (fixed block creation, final layers, and embedding) ---
 class BigGANDiscriminator(nn.Module):
     def __init__(self, num_classes, ch=64, img_size=128, attention_res=[64, 32]):
         super(BigGANDiscriminator, self).__init__()
